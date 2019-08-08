@@ -1,0 +1,24 @@
+{
+  "name": "weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "gcloud functions deploy weather --runtime nodejs8 --trigger-topic weather --memory 1024MB",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^3.0.4",
+    "airtable": "^0.7.0",
+    "dotenv": "^8.0.0",
+    "got": "^9.6.0",
+    "handlebars": "^4.1.2",
+    "instagram-private-api": "^1.22.0",
+    "lodash": "^4.17.15",
+    "puppeteer": "^1.19.0"
+  }
+}

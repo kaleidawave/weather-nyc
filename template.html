@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/inter-ui@3.9.0/inter.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+        <style>
+            body {
+                font-family: 'Inter', sans-serif;
+                margin: 0px;
+            }
+            
+            main {
+                width: 500px;
+                height: 500px;
+                padding: 0px 20px 40px 20px; 
+                text-align: center;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <h1>{{weather}}</h1>
+            <span><i class="fas fa-{{icon}}"></i></span>
+            <p>{{day}} {{date}}<sup>{{ordinal}}</sup> {{month}}</p>
+            <p>{{location}}</p>
+        </main>
+    </body>
+
+</html>
