@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "gcloud functions deploy weather --runtime nodejs8 --trigger-topic weather --memory 1024MB",
     "start": "node index.js"
   },

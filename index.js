@@ -54,24 +54,24 @@ exports.weather = async payload => {
     await page.setContent(content, {waitUntil: 'networkidle0'});
     await page.waitFor(500);
     const image = await page.screenshot({type: "jpeg", quality: 100});
-    // await browser.close();
+    await browser.close();
 
-    // const ig = new IgApiClient();
+    const ig = new IgApiClient();
 
-    // ig.state.generateDevice(process.env.instagramUsername);
-    // await ig.account.login(process.env.instagramUsername, process.env.instagramPassword);
+    ig.state.generateDevice(process.env.instagramUsername);
+    await ig.account.login(process.env.instagramUsername, process.env.instagramPassword);
 
-    // const caption = `Weather will be: ${weatherData.hourly.summary} \n\n\n Tags: ${lodash.shuffle(JSON.parse(process.env.tags), 10).map(x => '#' + x).join(' ')}`
+    const caption = `Weather will be: ${weatherData.hourly.summary} \n\n\n Tags: ${lodash.shuffle(JSON.parse(process.env.tags), 10).map(x => '#' + x).join(' ')}`
 
-    // const publishResult = await ig.publish.photo({
-    //     file: image,
-    //     location: (await ig.search.location(process.env.latitude, process.env.longitude, process.env.location))[0],
-    //     caption
-    // });
+    const publishResult = await ig.publish.photo({
+        file: image,
+        location: (await ig.search.location(process.env.latitude, process.env.longitude, process.env.location))[0],
+        caption
+    });
 
-    // await ig.account.logout();
+    await ig.account.logout();
 
-    // return JSON.stringify(publishResult);
+    return JSON.stringify(publishResult);
 }
 
 if (require.main === module) {
